@@ -1,0 +1,6 @@
+{
+  "name": "FarmLink",
+  "description": "A modern, complete frontend-only agricultural e-commerce marketplace and supply chain portal connecting farmers, buyers, logistics, and warehouse operators.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
