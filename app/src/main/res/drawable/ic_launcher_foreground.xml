@@ -1,30 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
 <vector xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:aapt="http://schemas.android.com/aapt"
     android:width="108dp"
     android:height="108dp"
     android:viewportWidth="108"
     android:viewportHeight="108">
-    <path android:pathData="M31,63.928c0,0 6.4,-11 12.1,-13.1c7.2,-2.6 26,-1.4 26,-1.4l38.1,38.1L107,108.928l-32,-1L31,63.928z">
-        <aapt:attr name="android:fillColor">
-            <gradient
-                android:endX="85.84757"
-                android:endY="92.4963"
-                android:startX="42.9492"
-                android:startY="49.59793"
-                android:type="linear">
-                <item
-                    android:color="#44000000"
-                    android:offset="0.0" />
-                <item
-                    android:color="#00000000"
-                    android:offset="1.0" />
-            </gradient>
-        </aapt:attr>
-    </path>
+
+    <!-- 1. Green Circular Border (representing global scope and unity) -->
     <path
-        android:fillColor="#FFFFFF"
-        android:fillType="nonZero"
-        android:pathData="M65.3,45.828l3.8,-6.6c0.2,-0.4 0.1,-0.9 -0.3,-1.1c-0.4,-0.2 -0.9,-0.1 -1.1,0.3l-3.9,6.7c-6.3,-2.8 -13.4,-2.8 -19.7,0l-3.9,-6.7c-0.2,-0.4 -0.7,-0.5 -1.1,-0.3C38.8,38.328 38.7,38.828 38.9,39.228l3.8,6.6C36.2,49.428 31.7,56.028 31,63.928h46C76.3,56.028 71.8,49.428 65.3,45.828zM43.4,57.328c-0.8,0 -1.5,-0.5 -1.8,-1.2c-0.3,-0.7 -0.1,-1.5 0.4,-2.1c0.5,-0.5 1.4,-0.7 2.1,-0.4c0.7,0.3 1.2,1 1.2,1.8C45.3,56.528 44.5,57.328 43.4,57.328L43.4,57.328zM64.6,57.328c-0.8,0 -1.5,-0.5 -1.8,-1.2s-0.1,-1.5 0.4,-2.1c0.5,-0.5 1.4,-0.7 2.1,-0.4c0.7,0.3 1.2,1 1.2,1.8C66.5,56.528 65.6,57.328 64.6,57.328L64.6,57.328z"
-        android:strokeWidth="1"
-        android:strokeColor="#00000000" />
+        android:strokeColor="#1B5E20"
+        android:strokeWidth="1.8"
+        android:fillColor="#00000000"
+        android:pathData="M54,14 A30,30 0 1,1 53.9,14 Z" />
+
+    <!-- 2. Rising Sun (Orange/Yellow prosperity) at the top of the circle -->
+    <path
+        android:fillColor="#FFA726"
+        android:pathData="M39,40 C39,32 45,26 54,26 C63,26 69,32 69,40 Z" />
+    <!-- Sun rays -->
+    <path
+        android:strokeColor="#FB8C00"
+        android:strokeWidth="1.2"
+        android:strokeLineCap="round"
+        android:pathData="M54,24 L54,19 M44,28 L40,24 M64,28 L68,24 M36,35 L31,34 M72,35 L77,34" />
+
+    <!-- 3. Agricultural Rolling Field Lines at the bottom of the circle -->
+    <path
+        android:fillColor="#2E7D32"
+        android:pathData="M27,62 C34,68 44,72 54,72 C64,72 74,68 81,62 C73,66 64,68 54,68 C44,68 35,66 27,62 Z" />
+    <path
+        android:fillColor="#81C784"
+        android:pathData="M29,65 C36,70 45,73 54,73 C63,73 72,70 79,65 C71,68 63,70 54,70 C45,70 37,68 29,65 Z" />
+
+    <!-- 4. Farmer and Wholesaler Shaking Hands inside the circle -->
+    <!-- Farmer Bust on the Left -->
+    <path
+        android:fillColor="#2E7D32"
+        android:pathData="M29,58 C29,51 32,45 37,45 L38,47 L36,54 L44,54 L41,58 Z" />
+    <!-- Farmer Turban/Pagri -->
+    <path
+        android:fillColor="#1B5E20"
+        android:pathData="M34,39 C32,39 30,41 30,43 C30,45 32,46 34,46 C36,46 37,45 37,43 C37,41 36,39 34,39 Z" />
+    <path
+        android:fillColor="#4CAF50"
+        android:pathData="M33,41 C34,40 36,40 37,42 C37,43 36,44 35,44 C34,44 33,43 33,41 Z" />
+
+    <!-- Buyer Bust on the Right -->
+    <path
+        android:fillColor="#1B5E20"
+        android:pathData="M79,58 C79,51 76,45 71,45 L70,47 L72,54 L64,54 L67,58 Z" />
+
+    <!-- Shaking Hands (Central partnership bridge) -->
+    <path
+        android:fillColor="#1B5E20"
+        android:pathData="M44,51 C46,50 50,49 52,51 L56,51 C58,49 62,50 64,51 L62,54 L58,52 L56,54 L52,52 L50,54 Z" />
+
+    <!-- 5. Fresh Sprout with Three Green Leaves (representing agricultural growth) -->
+    <!-- Stem -->
+    <path
+        android:strokeColor="#4CAF50"
+        android:strokeWidth="1.5"
+        android:strokeLineCap="round"
+        android:pathData="M54,42 L54,33" />
+    <!-- Left Leaf -->
+    <path
+        android:fillColor="#4CAF50"
+        android:pathData="M54,37 C51,37 49,35 49,33 C51,33 54,35 54,37 Z" />
+    <!-- Right Leaf -->
+    <path
+        android:fillColor="#4CAF50"
+        android:pathData="M54,37 C57,37 59,35 59,33 C57,33 54,35 54,37 Z" />
+    <!-- Top Leaf -->
+    <path
+        android:fillColor="#4CAF50"
+        android:pathData="M54,33 C54,30 52,28 54,28 C56,28 54,30 54,33 Z" />
+
+    <!-- 6. Shopping Cart containing Fresh Produce (representing buyer consumption) -->
+    <path
+        android:strokeColor="#1B5E20"
+        android:strokeWidth="1.2"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:fillColor="#00000000"
+        android:pathData="M65,59 L68,59 L71,64 L76,64 M71,64 L72,67 M75,64 L74,67" />
+    <!-- Orange Produce -->
+    <path
+        android:fillColor="#FF9800"
+        android:pathData="M69,58 A2,2 0 1,1 68.9,58 Z" />
+    <!-- Carrot Produce -->
+    <path
+        android:fillColor="#4CAF50"
+        android:pathData="M73,58 L71,61 L74,61 Z" />
+
+    <!-- 7. "FarmLink" Styled Typography at the bottom of the canvas -->
+    <!-- F -->
+    <path
+        android:fillColor="#1B5E20"
+        android:pathData="M24,84 L29,84 L29,86 L26,86 L26,88 L28,88 L28,90 L26,90 L26,94 L24,94 Z" />
+    <!-- a -->
+    <path
+        android:fillColor="#1B5E20"
+        android:pathData="M32,88 C30,88 29,89 29,91 C29,93 30,94 32,94 L32,90 Z" />
+    <path
+        android:fillColor="#1B5E20"
+        android:pathData="M34,88 L34,94 L32,94 L32,93 C31,94 30,94 29,94 C27,94 26,93 26,91 C26,89 27,88 29,88 C30,88 31,88 32,88 Z" />
+    <!-- r -->
+    <path
+        android:fillColor="#1B5E20"
+        android:pathData="M36,88 L36,94 L38,94 L38,90 C39,89 40,89 40,89 L40,87 C39,87 38,88 37,89 Z" />
+    <!-- m -->
+    <path
+        android:fillColor="#1B5E20"
+        android:pathData="M42,88 L42,94 L44,94 L44,90 C44,89 45,89 45,89 L45,94 L47,94 L47,90 C47,89 48,89 48,89 L48,94 L50,94 L50,88 C49,88 48,89 47,89 C46,89 45,88 44,89 C43,89 42,88 41,89 Z" />
+
+    <!-- L -->
+    <path
+        android:fillColor="#E65100"
+        android:pathData="M54,82 L54,94 L60,94 L60,92 L56,92 L56,82 Z" />
+    <!-- i -->
+    <path
+        android:fillColor="#E65100"
+        android:pathData="M62,88 L62,94 L64,94 L64,88 Z" />
+    <path
+        android:fillColor="#E65100"
+        android:pathData="M62,84 A1,1 0 1,1 61.9,84 Z" />
+    <!-- n -->
+    <path
+        android:fillColor="#E65100"
+        android:pathData="M66,88 L66,94 L68,94 L68,90 C68,89 69,89 70,89 L70,94 L72,94 L72,88 C71,88 70,89 69,89 C68,89 67,88 66,89 Z" />
+    <!-- k -->
+    <path
+        android:fillColor="#E65100"
+        android:pathData="M74,82 L74,94 L76,94 L76,89 L79,94 L82,94 L78,88 L81,84 L78,84 L76,87 L76,82 Z" />
+    <!-- Small leaf on the letter 'k' -->
+    <path
+        android:fillColor="#2E7D32"
+        android:pathData="M81,81 C82,79 84,79 85,80 C84,82 82,82 81,81 Z" />
+
+    <!-- Tagline separator lines -->
+    <path
+        android:strokeColor="#2E7D32"
+        android:strokeWidth="0.8"
+        android:pathData="M15,98 L24,98 M84,98 L93,98" />
 </vector>

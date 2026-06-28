@@ -7,6 +7,9 @@ import androidx.compose.material3.darkColorScheme
 import androidx.compose.material3.dynamicDarkColorScheme
 import androidx.compose.material3.dynamicLightColorScheme
 import androidx.compose.material3.lightColorScheme
+import androidx.compose.material3.Shapes
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.ui.unit.dp
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
@@ -55,6 +58,14 @@ private val LightColorScheme =
     outlineVariant = BorderColor,
   )
 
+val PremiumShapes = Shapes(
+    extraSmall = RoundedCornerShape(8.dp),
+    small = RoundedCornerShape(12.dp),
+    medium = RoundedCornerShape(18.dp),
+    large = RoundedCornerShape(24.dp),
+    extraLarge = RoundedCornerShape(32.dp)
+)
+
 @Composable
 fun MyApplicationTheme(
   darkTheme: Boolean = isSystemInDarkTheme(),
@@ -73,5 +84,10 @@ fun MyApplicationTheme(
       else -> LightColorScheme
     }
 
-  MaterialTheme(colorScheme = colorScheme, typography = Typography, content = content)
+  MaterialTheme(
+    colorScheme = colorScheme,
+    typography = Typography,
+    shapes = PremiumShapes,
+    content = content
+  )
 }

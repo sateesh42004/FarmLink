@@ -37,6 +37,9 @@ import androidx.compose.ui.unit.sp
 import androidx.compose.ui.window.Dialog
 import com.example.data.*
 import com.example.ui.theme.*
+import com.example.R
+import androidx.compose.foundation.Image
+import androidx.compose.ui.res.painterResource
 import kotlinx.coroutines.flow.asStateFlow
 
 // ==========================================
@@ -82,20 +85,13 @@ fun MarketplaceApp() {
             TopAppBar(
                 title = {
                     Row(verticalAlignment = Alignment.CenterVertically) {
-                        Box(
+                        Image(
+                            painter = painterResource(id = R.drawable.ic_logo_brand),
+                            contentDescription = "FarmLink Logo",
                             modifier = Modifier
-                                .size(36.dp)
-                                .clip(RoundedCornerShape(8.dp))
-                                .background(MaterialTheme.colorScheme.primary),
-                            contentAlignment = Alignment.Center
-                        ) {
-                            Icon(
-                                imageVector = Icons.Default.Agriculture,
-                                contentDescription = "FarmLink Logo",
-                                tint = MaterialTheme.colorScheme.onPrimary,
-                                modifier = Modifier.size(24.dp)
-                            )
-                        }
+                                .size(38.dp)
+                                .clip(RoundedCornerShape(10.dp))
+                        )
                         Spacer(modifier = Modifier.width(8.dp))
                         Column {
                             Text(
