@@ -23,11 +23,13 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.testTag
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.style.TextAlign
@@ -35,6 +37,7 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.window.Dialog
+import com.example.R
 import com.example.data.*
 import com.example.ui.theme.*
 import java.util.UUID
@@ -64,10 +67,11 @@ fun BuyerLoginScreen(onSuccess: (rememberMe: Boolean) -> Unit) {
             modifier = Modifier
                 .fillMaxWidth()
                 .widthIn(max = 450.dp)
+                .shadow(elevation = 2.dp, shape = RoundedCornerShape(24.dp), clip = false)
                 .testTag("buyer_login_card"),
-            shape = RoundedCornerShape(20.dp),
+            shape = RoundedCornerShape(24.dp),
             colors = CardDefaults.cardColors(containerColor = LightSurface),
-            elevation = CardDefaults.cardElevation(defaultElevation = 6.dp)
+            border = BorderStroke(1.dp, BorderColor.copy(alpha = 0.35f))
         ) {
             Column(
                 modifier = Modifier
@@ -77,20 +81,13 @@ fun BuyerLoginScreen(onSuccess: (rememberMe: Boolean) -> Unit) {
                 verticalArrangement = Arrangement.spacedBy(16.dp)
             ) {
                 // Header Brand Icon
-                Box(
+                Image(
+                    painter = painterResource(id = R.drawable.ic_logo_brand),
+                    contentDescription = "FarmLink Brand Logo",
                     modifier = Modifier
-                        .size(64.dp)
-                        .clip(CircleShape)
-                        .background(FarmGreenPrimary.copy(alpha = 0.15f)),
-                    contentAlignment = Alignment.Center
-                ) {
-                    Icon(
-                        imageVector = Icons.Default.BusinessCenter,
-                        contentDescription = "Buyer Portal",
-                        tint = FarmGreenPrimary,
-                        modifier = Modifier.size(32.dp)
-                    )
-                }
+                        .size(72.dp)
+                        .clip(RoundedCornerShape(14.dp))
+                )
 
                 Text(
                     text = "Buyer Procurement Portal",
@@ -470,7 +467,7 @@ fun BuyerDashboardHome(
                         Column(
                             modifier = Modifier
                                 .weight(1f)
-                                .clip(RoundedCornerShape(12.dp))
+                                .clip(RoundedCornerShape(18.dp))
                                 .background(bgColor)
                                 .clickable {
                                     MarketplaceRepository.searchQuery.value = catName
@@ -530,10 +527,12 @@ fun BuyerDashboardHome(
                             Card(
                                 modifier = Modifier
                                     .width(220.dp)
+                                    .shadow(elevation = 1.dp, shape = RoundedCornerShape(18.dp), clip = false)
                                     .clickable { onSelectCrop(crop.id) }
                                     .testTag("best_deal_item_${crop.id}"),
+                                shape = RoundedCornerShape(18.dp),
                                 colors = CardDefaults.cardColors(containerColor = LightSurface),
-                                border = BorderStroke(1.dp, BorderColor)
+                                border = BorderStroke(1.dp, BorderColor.copy(alpha = 0.35f))
                             ) {
                                 Column(modifier = Modifier.padding(12.dp)) {
                                     Box(
@@ -590,9 +589,11 @@ fun BuyerDashboardHome(
                         Card(
                             modifier = Modifier
                                 .fillMaxWidth()
+                                .shadow(elevation = 1.dp, shape = RoundedCornerShape(18.dp), clip = false)
                                 .clickable { onSelectCrop(crop.id) },
+                            shape = RoundedCornerShape(18.dp),
                             colors = CardDefaults.cardColors(containerColor = LightSurface),
-                            border = BorderStroke(1.dp, BorderColor)
+                            border = BorderStroke(1.dp, BorderColor.copy(alpha = 0.35f))
                         ) {
                             Row(
                                 modifier = Modifier
@@ -655,9 +656,11 @@ fun BuyerDashboardHome(
                         Card(
                             modifier = Modifier
                                 .width(180.dp)
+                                .shadow(elevation = 1.dp, shape = RoundedCornerShape(18.dp), clip = false)
                                 .clickable { onSelectCrop(crop.id) },
+                            shape = RoundedCornerShape(18.dp),
                             colors = CardDefaults.cardColors(containerColor = LightSurface),
-                            border = BorderStroke(1.dp, BorderColor)
+                            border = BorderStroke(1.dp, BorderColor.copy(alpha = 0.35f))
                         ) {
                             Column(modifier = Modifier.padding(10.dp)) {
                                 Row(
@@ -710,9 +713,11 @@ fun BuyerDashboardHome(
                     items(farmers) { farmer ->
                         Card(
                             modifier = Modifier
-                                .width(200.dp),
+                                .width(200.dp)
+                                .shadow(elevation = 1.dp, shape = RoundedCornerShape(18.dp), clip = false),
+                            shape = RoundedCornerShape(18.dp),
                             colors = CardDefaults.cardColors(containerColor = LightSurface),
-                            border = BorderStroke(1.dp, BorderColor)
+                            border = BorderStroke(1.dp, BorderColor.copy(alpha = 0.35f))
                         ) {
                             Column(
                                 modifier = Modifier.padding(12.dp),
@@ -753,8 +758,8 @@ fun BuyerDashboardHome(
                                     },
                                     modifier = Modifier.fillMaxWidth(),
                                     colors = ButtonDefaults.buttonColors(containerColor = FarmGreenPrimary),
-                                    contentPadding = PaddingValues(0.dp),
-                                    shape = RoundedCornerShape(6.dp)
+                                    contentPadding = PaddingValues(horizontal = 12.dp, vertical = 6.dp),
+                                    shape = RoundedCornerShape(12.dp)
                                 ) {
                                     Text("Connect Direct", fontSize = 10.sp)
                                 }
@@ -780,9 +785,12 @@ fun BuyerDashboardHome(
                 ) {
                     items(mandiPrices) { mandi ->
                         Card(
+                            modifier = Modifier
+                                .width(180.dp)
+                                .shadow(elevation = 1.dp, shape = RoundedCornerShape(18.dp), clip = false),
+                            shape = RoundedCornerShape(18.dp),
                             colors = CardDefaults.cardColors(containerColor = LightSurface),
-                            border = BorderStroke(1.dp, BorderColor),
-                            modifier = Modifier.width(180.dp)
+                            border = BorderStroke(1.dp, BorderColor.copy(alpha = 0.35f))
                         ) {
                             Column(modifier = Modifier.padding(12.dp)) {
                                 Row(
@@ -833,9 +841,11 @@ fun BuyerDashboardHome(
                             Card(
                                 modifier = Modifier
                                     .width(160.dp)
+                                    .shadow(elevation = 1.dp, shape = RoundedCornerShape(18.dp), clip = false)
                                     .clickable { onSelectCrop(crop.id) },
+                                shape = RoundedCornerShape(18.dp),
                                 colors = CardDefaults.cardColors(containerColor = LightSurface),
-                                border = BorderStroke(1.dp, BorderColor)
+                                border = BorderStroke(1.dp, BorderColor.copy(alpha = 0.35f))
                             ) {
                                 Column(modifier = Modifier.padding(10.dp)) {
                                     Text(crop.name, fontWeight = FontWeight.Bold, fontSize = 13.sp, maxLines = 1, overflow = TextOverflow.Ellipsis)
@@ -876,9 +886,11 @@ fun BuyerDashboardHome(
                         Card(
                             modifier = Modifier
                                 .fillMaxWidth()
+                                .shadow(elevation = 1.dp, shape = RoundedCornerShape(18.dp), clip = false)
                                 .clickable { onSelectCrop(crop.id) },
+                            shape = RoundedCornerShape(18.dp),
                             colors = CardDefaults.cardColors(containerColor = LightSurface),
-                            border = BorderStroke(1.dp, BorderColor)
+                            border = BorderStroke(1.dp, BorderColor.copy(alpha = 0.35f))
                         ) {
                             Row(
                                 modifier = Modifier
@@ -1036,10 +1048,12 @@ fun BuyerMarketplaceView(
                             Card(
                                 modifier = Modifier
                                     .fillMaxWidth()
+                                    .shadow(elevation = 1.dp, shape = RoundedCornerShape(18.dp), clip = false)
                                     .clickable { onSelectCrop(crop.id) }
                                     .testTag("marketplace_crop_item_${crop.id}"),
+                                shape = RoundedCornerShape(18.dp),
                                 colors = CardDefaults.cardColors(containerColor = LightSurface),
-                                border = BorderStroke(1.dp, BorderColor)
+                                border = BorderStroke(1.dp, BorderColor.copy(alpha = 0.35f))
                             ) {
                                 Column(modifier = Modifier.padding(16.dp)) {
                                     Row(
@@ -1111,8 +1125,8 @@ fun BuyerMarketplaceView(
                                         Button(
                                             onClick = { onSelectCrop(crop.id) },
                                             colors = ButtonDefaults.buttonColors(containerColor = FarmGreenPrimary),
-                                            shape = RoundedCornerShape(8.dp),
-                                            contentPadding = PaddingValues(horizontal = 14.dp, vertical = 6.dp)
+                                            shape = RoundedCornerShape(12.dp),
+                                            contentPadding = PaddingValues(horizontal = 16.dp, vertical = 8.dp)
                                         ) {
                                             Text("View Lot details", fontSize = 11.sp)
                                         }
